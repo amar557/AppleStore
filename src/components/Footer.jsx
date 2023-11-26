@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 function Footer() {
   return (
-    <div className="bg-black h-[50vh] text-white grid pt-12 grid-cols-12 justify-center  font-poppins  mt-10">
+    <div className="bg-black h-[50vh] text-white grid pt-12 grid-cols-13 w-full justify-center  font-poppins  mt-10">
       <Exclusive />
 
       <Support />
