@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
@@ -6,52 +6,59 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
+const lInksData = [
+  { link: "Home", to: "/" },
+  { link: "contact", to: "contact" },
+  { link: "about", to: "about" },
+  { link: "signup", to: "signUp" },
+];
+
 function Navbar() {
   return (
-    <div className="grid grid-cols-12  text-black h-16 items-center text-xl  mt-3 border-b-2 mb-3 ">
-      <div className="col-start-2 text-2xl">exclusive</div>
-      <ul className="flex col-start-5 col-end-9 gap-x-5 capitalize text-lg font-[400] font-poppins">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="contact">contact</Link>
-        </li>
-        <li>
-          <Link to="about">about</Link>
-        </li>
-        <li>
-          <Link to="signUp">sign up</Link>
-        </li>
-      </ul>
+    <div className="mx-auto mb-3  mt-3 flex h-16 w-[84%] items-center justify-between border-b-2 text-xl text-black ">
+      <div className=" text-2xl ">exclusive</div>
+      <div className=" right-0 top-0  flex-col items-center justify-around space-y-6 pe-6 text-right md:static md:flex md:w-[100%] md:flex-row lg:w-[84%]">
+        <ul className=" translate-x-16  items-center  space-x-3  font-poppins font-[400] capitalize md:flex md:text-sm lg:text-lg">
+          {lInksData.map((data, i) => (
+            <ListOfLink link={data.link} to={data.to} key={i} />
+          ))}
+        </ul>
 
-      <div className="flex  relative text-gray-600 items-center   justify-end col-start-10 col-end-11 ">
-        <input
-          type="text"
-          name="search"
-          placeholder="what are you looking for"
-          className="rounded px-2 py-3 box-border h-8 focus:border-0 text-sm w-20  focus:outline-none placeholder:text-sm placeholder:font-poppins bg-[#F5F5F5] "
-          autoComplete="off"
-        />
-        <FontAwesomeIcon
-          icon={faMagnifyingGlass}
-          className="absolute  text-slate-300 pointer-events-none me-1"
-        />
-      </div>
-      <div>
-        <div className="text-black col-start-12  space-x-16 ">
+        <div className="relative  flex items-center justify-start   text-gray-600  ">
+          <input
+            type="text"
+            name="search"
+            placeholder="what are you looking for"
+            className="box-border h-8 rounded bg-[#F5F5F5] px-2 py-3 text-sm placeholder:font-poppins focus:border-0  focus:outline-none md:w-40 md:placeholder:text-[10px] lg:w-56 lg:placeholder:text-sm "
+            autoComplete="off"
+          />
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            className="pointer-events-none  absolute right-1 top-2 me-1 text-slate-300"
+          />
+        </div>
+
+        <div className="space-x-8 text-white lg:text-black xl:space-x-16">
           <FontAwesomeIcon
             icon={faHeart}
-            className="text-black hover:cursor-pointer"
+            className="text-white hover:cursor-pointer lg:text-black"
           />
           <FontAwesomeIcon
             icon={faCartShopping}
-            className="text-black hover:cursor-pointer "
+            className="text-white hover:cursor-pointer lg:text-black "
           />
         </div>
       </div>
     </div>
   );
 }
-
+function ListOfLink({ to, link }) {
+  return (
+    <>
+      <li>
+        <NavLink to={to}>{link}</NavLink>
+      </li>
+    </>
+  );
+}
 export default Navbar;

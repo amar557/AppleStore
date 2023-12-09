@@ -21,3 +21,10 @@
   background-color: white;
   color: white;
 }
+#root {
+  overflow-x: hidden;
+}
+.active {
+  border-bottom: 2px solid aqua;
+  transition: all 1s linear;
+}

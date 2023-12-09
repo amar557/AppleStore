@@ -26,10 +26,7 @@ function Main() {
           <li>health & beauty</li>
         </ul>
       </div>
-      <div
-        className="col-start-8 col-end-12 flex bg-black text-white w-[892px] h-[344px] p-8
-items-center justify-around"
-      >
+      <div className=" flex bg-black text-white w-[892px] h-[344px]">
         <Swiper
           spaceBetween={0}
           pagination={{
@@ -53,7 +50,11 @@ items-center justify-around"
 
 function VoucherSlider() {
   return (
-    <div div className="flex">
+    <div
+      div
+      className="flex  p-6
+    items-center justify-around"
+    >
       <div>
         <div className="flex items-center space-x-4 ">
           <img src={iphoneLogo} alt="pic" />

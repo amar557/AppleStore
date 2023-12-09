@@ -19,7 +19,6 @@ function Home() {
       <OurProducts />
       <Featured />
       <IconsSection />
-      <Pages />
     </div>
   );
 }
