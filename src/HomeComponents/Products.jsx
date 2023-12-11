@@ -9,9 +9,9 @@ import ProductsPage from "./ProductItem";
 
 import "swiper/css";
 import "swiper/css/pagination";
-
-// const date = new Date().toLocaleTimeString();
-// console.log(date);
+import { Swiper } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
+import { FreeMode } from "swiper/modules";
 const data = [
   {
     img: remoteImg,
@@ -56,6 +56,7 @@ const data = [
     chair: true,
   },
 ];
+
 const dataAndTime = [
   {
     date: "days",
@@ -74,7 +75,7 @@ const dataAndTime = [
   },
   {
     date: "seconds",
-    time: "56",
+    time: 45,
     dots: false,
   },
 ];
@@ -93,19 +94,44 @@ function Products() {
         </div>
       </div>
       <div className="col-start-2 col-end-12 row-start-3 flex space-x-10">
-        ,
-        {data.map((data, i) => (
-          <ProductsPage
-            key={i}
-            image={data.img}
-            heading={data.heading}
-            rate={data.rate}
-            Disrate={data.Disrate}
-            fill={data.fill}
-            sale={data.sale}
-            chair={data.chair}
-          />
-        ))}
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={30}
+          freeMode={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[FreeMode]}
+          className="mySwiper"
+        >
+          {data.map((data, i) => (
+            <SwiperSlide key={i}>
+              <ProductsPage
+                key={i}
+                image={data.img}
+                heading={data.heading}
+                rate={data.rate}
+                Disrate={data.Disrate}
+                fill={data.fill}
+                sale={data.sale}
+                chair={data.chair}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        {/* <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[FreeMode, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>Slide 1</SwiperSlide>
+     
+      </Swiper> */}
       </div>
 
       <div className="col-start-7 row-start-4 mt-8 justify-center">

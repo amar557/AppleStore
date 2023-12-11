@@ -24,26 +24,28 @@ const iconsData = [
 ];
 function IconsSection() {
   return (
-    <div className="flex space-x-10 ms-[7.5rem] gap-20 my-28 font-poppins ">
-      {iconsData.map((data, i) => (
-        <Icon
-          icon={data.icon}
-          heading={data.heading}
-          content={data.content}
-          key={i}
-        />
-      ))}
+    <div className="flex justify-center">
+      <div className="font-poppinss mx-auto  my-28  flex w-11/12  flex-wrap justify-center gap-20 lg:justify-between    ">
+        {iconsData.map((data, i) => (
+          <Icon
+            icon={data.icon}
+            heading={data.heading}
+            content={data.content}
+            key={i}
+          />
+        ))}
+      </div>
     </div>
   );
 }
 
 function Icon({ icon, heading, content }) {
   return (
-    <div className="flex items-center justify-center flex-col">
-      <div className="text-3xl mb-6 font-bold bg-black text-white p-4 ring-8 ring-slate-300 w-16 h-16 flex items-center justify-center  rounded-[50%]">
+    <div className="flex flex-col items-center justify-center">
+      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-[50%] bg-black p-4 text-3xl font-bold text-white ring-8  ring-slate-300">
         <FontAwesomeIcon icon={icon} />
       </div>
-      <h1 className="font-bold text-xl uppercase">{heading}</h1>
+      <h1 className="text-xl font-bold uppercase">{heading}</h1>
       <p className="text-[12px]">{content}</p>
     </div>
   );

@@ -17,8 +17,8 @@ export default function ProductsPage({
   const iconStyle =
     "bg-white rounded-[50%] w-6 h-6 flex justify-center items-center";
   return (
-    <div className="flex flex-col ">
-      <div className=" group relative flex h-[15rem] w-[15rem] items-center justify-center space-x-3 rounded-lg bg-[#F5F5F5] hover:cursor-pointer">
+    <div className="mb-8 flex flex-col">
+      <div className=" group relative flex h-[15rem] w-[15rem] items-center justify-center  rounded-lg bg-[#F5F5F5] hover:cursor-pointer">
         <img
           src={image}
           alt="remote"

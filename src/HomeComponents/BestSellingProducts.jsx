@@ -41,29 +41,28 @@ const productsData = [
 
 function BestSellingProducts() {
   return (
-    <div className="grid grid-cols-12 grid-rows-[1fr_2fr_6fr] items-center   mt-[4rem]  border-b-2 ">
-      <div className="col-start-2 text-red-500 font-bold text-sm capitalize">
+    <div className="mx-auto mt-[4rem] flex w-11/12 flex-col  items-center justify-center  border-b-2 ">
+      <div className="col-start-2 self-start text-sm font-bold capitalize text-red-500">
         this month
       </div>
-      <div className="flex items-center justify-between row-start-2 col-start-2 col-end-12">
-        <h1 className="text-xl capitalize font-bold">best selling products</h1>
+      <div className="  mb-3 flex w-full items-center justify-between">
+        <h1 className="text-xl font-bold capitalize">best selling products</h1>
         <Button content="view all" />
       </div>
-      <div className="grid grid-cols-12 col-start-2 col-end-13 ">
-        <div className="flex space-x-9 mb-8">
-          {productsData.map((data, i) => (
-            <ProductsPage
-              key={i}
-              image={data.img}
-              heading={data.heading}
-              rate={data.rate}
-              Disrate={data.Disrate}
-              fill={data.fill}
-              sale={false}
-              cartBtn={false}
-            />
-          ))}
-        </div>
+
+      <div className="mb-8 grid w-full grid-cols-1 space-x-5 sm:grid-cols-2  lg:grid-cols-4 ">
+        {productsData.map((data, i) => (
+          <ProductsPage
+            key={i}
+            image={data.img}
+            heading={data.heading}
+            rate={data.rate}
+            Disrate={data.Disrate}
+            fill={data.fill}
+            sale={false}
+            cartBtn={false}
+          />
+        ))}
       </div>
     </div>
   );

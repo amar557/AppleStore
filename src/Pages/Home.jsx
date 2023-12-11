@@ -6,7 +6,6 @@ import Main from "../HomeComponents/HomeMain";
 import IconsSection from "../HomeComponents/IconsSection";
 import OurProducts from "../HomeComponents/OurProducts";
 import Products from "../HomeComponents/Products";
-import Pages from "../components/Swiper";
 
 function Home() {
   return (

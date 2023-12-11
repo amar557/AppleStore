@@ -78,28 +78,15 @@ const data = [
 ];
 function OurProducts() {
   return (
-    <div className="grid grid-cols-12 grid-rows-[0.5fr_0.5fr_4fr] mt-8">
-      <h1 className="text-sm leading-3  text-red-500 font-semibold col-start-2 col-end-12">
+    <div className="mx-auto mt-8 flex w-11/12 flex-col items-center">
+      <h1 className="ms-9 self-start  text-sm font-semibold leading-3 text-red-500">
         our Products
       </h1>
-      <h1 className="text-2xl font-semibold row-start-2 col-start-2 col-end-12">
+      <h1 className="row-start-2 ms-9 self-start text-2xl font-semibold">
         explore our products
       </h1>
-      {/* <div>
-        {/* {data.map((item, i) => (
-          <ProductsPage
-            key={i}
-            image={item.pic}
-            heading={item.heading}
-            chair={false}
-            rate={item.rate}
-            Disrate=""
-            rating={true}
-            cartBtn={false}
-          />
-        ))} */}
-      {/* </div> */} */
-      <div className="col-start-2 col-end-13 flex flex-wrap gap-x-[3.8rem] space-y-6">
+
+      <div className="grid grid-cols-1 items-center justify-center  gap-x-[3.8rem] space-y-6 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4">
         {data.map((item, i) => (
           <ProductExplore
             key={i}
@@ -113,23 +100,15 @@ function OurProducts() {
     </div>
   );
 }
-// image,
-// heading,
-// chair,
-// rate,
-// Disrate,
-// fill,
-// rating,
-// sale,
-// cartBtn = true,
+
 function ProductExplore({ img, heading, rate, rating }) {
   const iconStyle =
     "bg-white rounded-[50%] w-6 h-6 flex justify-center items-center";
   return (
     <div className="flex flex-col ">
-      <div className=" group bg-[#F5F5F5] w-[15rem] hover:cursor-pointer h-[13rem] space-x-3 flex items-center justify-center relative rounded-lg">
+      <div className=" group relative flex h-[13rem] w-[15rem] items-center justify-center space-x-3 rounded-lg bg-[#F5F5F5] hover:cursor-pointer">
         <img src={img} alt="remote" className={` w-28`} />
-        <div className="absolute top-2 right-3 space-y-4 flex flex-col">
+        <div className="absolute right-3 top-2 flex flex-col space-y-4">
           <div className={iconStyle}>
             <FontAwesomeIcon icon={faHeart} />
           </div>
@@ -139,9 +118,9 @@ function ProductExplore({ img, heading, rate, rating }) {
         </div>
       </div>
       <div>
-        <h1 className="font-[500] my-3 ">{heading}</h1>
+        <h1 className="my-3 font-[500] ">{heading}</h1>
         <div className="flex space-x-3">
-          <span className="text-red-500 font-[500]">{rate}</span>
+          <span className="font-[500] text-red-500">{rate}</span>
 
           <span className="flex">
             <Star />
