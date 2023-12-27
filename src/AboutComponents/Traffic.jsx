@@ -30,7 +30,7 @@ const data = [
 ];
 function Traffic() {
   return (
-    <div className=" mx-auto  my-24 grid  grid-cols-1 grid-rows-4 justify-between gap-x-5 space-y-5 sm:grid-cols-2   sm:grid-rows-2  lg:grid-cols-4 lg:grid-rows-1  ">
+    <div className=" mx-auto  my-24 grid grid-cols-1  grid-rows-4 justify-between gap-x-5 space-y-5  sm:grid-cols-2   sm:grid-rows-2  lg:grid-cols-4 lg:grid-rows-1  ">
       {data.map((data, i) => (
         <IconComponent
           icon={data.icon}

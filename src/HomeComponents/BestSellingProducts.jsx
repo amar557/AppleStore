@@ -41,7 +41,7 @@ const productsData = [
 
 function BestSellingProducts() {
   return (
-    <div className="mx-auto mt-[4rem] flex w-11/12 flex-col  items-center justify-center  border-b-2 ">
+    <div className="mx-auto mt-16 flex w-10/12 flex-col  items-center justify-center   border-b-2 ">
       <div className="col-start-2 self-start text-sm font-bold capitalize text-red-500">
         this month
       </div>
@@ -50,7 +50,7 @@ function BestSellingProducts() {
         <Button content="view all" />
       </div>
 
-      <div className="mb-8 grid w-full grid-cols-1 space-x-5 sm:grid-cols-2  lg:grid-cols-4 ">
+      <div className="mb-8 grid w-full grid-cols-1 gap-x-14 sm:grid-cols-2  lg:grid-cols-4 ">
         {productsData.map((data, i) => (
           <ProductsPage
             key={i}

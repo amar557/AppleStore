@@ -78,11 +78,11 @@ const data = [
 ];
 function OurProducts() {
   return (
-    <div className="mx-auto mt-8 flex w-11/12 flex-col items-center">
-      <h1 className="ms-9 self-start  text-sm font-semibold leading-3 text-red-500">
+    <div className="mx-auto mt-8 flex w-10/12 flex-col items-center">
+      <h1 className=" self-start  text-sm font-semibold leading-3 text-red-500">
         our Products
       </h1>
-      <h1 className="row-start-2 ms-9 self-start text-2xl font-semibold">
+      <h1 className="row-start-2  self-start text-2xl font-semibold">
         explore our products
       </h1>
 

@@ -20,25 +20,25 @@ const Times = [
 ];
 function BoomBox() {
   return (
-    <div className="mt-8 grid grid-cols-12 pb-8 border-b-2">
-      <div className="col-start-2 col-end-12 h-[30rem] bg-black grid grid-cols-12 items-center">
-        <div className="text-white col-start-2 col-end-6">
-          <h1 className="font-semibold text-sm text-[#00FF66] mb-8">
+    <div className="mx-auto mt-8 w-10/12 border-b-2 pb-8">
+      <div className=" grid  h-[30rem] grid-cols-2 items-center bg-black px-16">
+        <div className=" text-white">
+          <h1 className="mb-8 text-sm font-semibold text-[#00FF66]">
             categories
           </h1>
-          <h1 className="text-4xl capitalize tracking-wider font-bold  mb-3">
+          <h1 className="mb-3 text-4xl font-bold capitalize  tracking-wider">
             enhance your <br /> music experience
           </h1>
-          <div className="flex space-x-3 my-6">
+          <div className="my-6 flex space-x-3">
             {Times.map((obj, i) => (
               <Timings number={obj.number} notation={obj.notation} key={i} />
             ))}
           </div>
           <div>
-            <Button content="buy now" color="bg-[#00FF66]" w="9rem" />
+            <Button content="buy now" color="bg-[#00FF66]" w="36" />
           </div>
         </div>
-        <div className="col-start-6 col-end-12">
+        <div className="">
           <img src={BoomBoxImg} alt="boombox" />
         </div>
       </div>
@@ -47,7 +47,7 @@ function BoomBox() {
 }
 function Timings({ number, notation }) {
   return (
-    <div className="bg-white text-black text-center rounded-[50%] w-[4rem] flex items-center justify-center flex-col h-[4rem] leading-5 box-border">
+    <div className="box-border flex h-[4rem] w-[4rem] flex-col items-center justify-center rounded-[50%] bg-white text-center leading-5 text-black">
       <p className="font-bold">{number}</p>
       <p className="pb-1">{notation}</p>
     </div>

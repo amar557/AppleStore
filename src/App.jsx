@@ -6,6 +6,7 @@ import Error from "./Pages/Error";
 import ContactPage from "./Pages/Contact";
 import About from "./Pages/About";
 import SignUp from "./Pages/SignUp";
+import Cart from "./Pages/Cart";
 const Router = createBrowserRouter([
   {
     element: <Layout />,
@@ -26,6 +27,10 @@ const Router = createBrowserRouter([
       {
         element: <SignUp />,
         path: "/signUp",
+      },
+      {
+        element: <Cart />,
+        path: "/cart",
       },
     ],
   },

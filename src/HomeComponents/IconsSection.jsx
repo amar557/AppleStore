@@ -25,7 +25,7 @@ const iconsData = [
 function IconsSection() {
   return (
     <div className="flex justify-center">
-      <div className="font-poppinss mx-auto  my-28  flex w-11/12  flex-wrap justify-center gap-20 lg:justify-between    ">
+      <div className="font-poppinss mx-auto  my-28  flex w-10/12  flex-wrap justify-center gap-20 lg:justify-between    ">
         {iconsData.map((data, i) => (
           <Icon
             icon={data.icon}

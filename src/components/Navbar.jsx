@@ -1,10 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const lInksData = [
   { link: "Home", to: "/" },
@@ -14,6 +16,11 @@ const lInksData = [
 ];
 
 function Navbar() {
+  const selection = useSelector((data) => data.cart.cart);
+  const navigate = useNavigate();
+  function GoToCart() {
+    navigate("cart");
+  }
   return (
     <div className="mx-auto mb-3  mt-3 flex h-16 w-[84%] items-center justify-between border-b-2 text-xl text-black ">
       <div className=" text-2xl ">exclusive</div>
@@ -43,10 +50,13 @@ function Navbar() {
             icon={faHeart}
             className="text-white hover:cursor-pointer lg:text-black"
           />
-          <FontAwesomeIcon
-            icon={faCartShopping}
-            className="text-white hover:cursor-pointer lg:text-black "
-          />
+          <div onClick={GoToCart}>
+            <FontAwesomeIcon
+              icon={faCartShopping}
+              className="text-white hover:cursor-pointer lg:text-black "
+            />
+            <span>{selection.length}</span>
+          </div>
         </div>
       </div>
     </div>

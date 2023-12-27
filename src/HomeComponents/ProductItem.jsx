@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Star } from "./Products";
-import { faEye, faHeart, faL } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { AddToCart } from "../ReduxSlices/CartSlice";
 
 export default function ProductsPage({
   image,
@@ -13,9 +15,24 @@ export default function ProductsPage({
   rating,
   sale,
   cartBtn = true,
+  i,
 }) {
   const iconStyle =
     "bg-white rounded-[50%] w-6 h-6 flex justify-center items-center";
+
+  const dispatch = useDispatch();
+  function GetData() {
+    const cartItem = {
+      pic: image,
+      itemName: heading,
+      quantity: 0,
+      SubTotal: null,
+      id: i,
+      price: rate,
+      // SubTotal: 15,
+    };
+    dispatch(AddToCart(cartItem));
+  }
   return (
     <div className="mb-8 flex flex-col">
       <div className=" group relative flex h-[15rem] w-[15rem] items-center justify-center  rounded-lg bg-[#F5F5F5] hover:cursor-pointer">
@@ -27,7 +44,9 @@ export default function ProductsPage({
 
         {cartBtn && (
           <div className="absolute bottom-0 right-0 w-[100%] rounded-b-lg  bg-black py-1 text-center text-white opacity-0 transition-all duration-500 group-hover:opacity-100">
-            <Link className="capitalize ">Add to cart</Link>
+            <Link className="capitalize " onClick={GetData}>
+              Add to cart
+            </Link>
           </div>
         )}
         <div className="absolute right-3 top-2 flex flex-col space-y-4">
@@ -47,7 +66,7 @@ export default function ProductsPage({
       <div>
         <h1 className="my-3 font-[500] ">{heading}</h1>
         <div className="space-x-3">
-          <span className="font-[500] text-red-500">{rate}</span>
+          <span className="font-[500] text-red-500">{rate}$</span>
           <span className="text-[#bfb5b5] line-through">{Disrate}</span>
         </div>
         <div className="flex">

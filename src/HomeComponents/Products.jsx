@@ -8,7 +8,9 @@ import Button from "../components/Button";
 import ProductsPage from "./ProductItem";
 
 import "swiper/css";
+import "swiper/css/free-mode";
 import "swiper/css/pagination";
+
 import { Swiper } from "swiper/react";
 import { SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
@@ -16,7 +18,7 @@ const data = [
   {
     img: remoteImg,
     heading: "HAVIT HV-G92 Gamepad",
-    rate: "$120",
+    rate: 120,
     Disrate: "$160",
     fill: true,
     sale: true,
@@ -24,7 +26,7 @@ const data = [
   {
     img: keyboardImg,
     heading: "AK-900 Wired Keyboard",
-    rate: "$960",
+    rate: 960,
     Disrate: "$1160",
     fill: true,
     sale: true,
@@ -32,7 +34,7 @@ const data = [
   {
     img: LEDImg,
     heading: "IPS LCD Gaming Monitor",
-    rate: "$370",
+    rate: 370,
     Disrate: "$400",
     fill: true,
     sale: true,
@@ -40,7 +42,7 @@ const data = [
   {
     img: chairImg,
     heading: "S-Series Comfort Chair",
-    rate: "$375",
+    rate: 375,
     Disrate: "$400",
     fill: true,
     sale: true,
@@ -49,7 +51,7 @@ const data = [
   {
     img: chairImg,
     heading: "S-Series Comfort Chair",
-    rate: "$375",
+    rate: 375,
     Disrate: "$400",
     fill: true,
     sale: true,
@@ -93,7 +95,7 @@ function Products() {
           ))}
         </div>
       </div>
-      <div className="col-start-2 col-end-12 row-start-3 flex space-x-10">
+      <div className="col-start-2 col-end-12 row-start-3 flex  space-x-10">
         <Swiper
           slidesPerView={4}
           spaceBetween={30}
@@ -115,6 +117,7 @@ function Products() {
                 fill={data.fill}
                 sale={data.sale}
                 chair={data.chair}
+                i={i}
               />
             </SwiperSlide>
           ))}

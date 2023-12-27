@@ -1,36 +1,31 @@
-import {
-  faCamera,
-  faClock,
-  faDisplay,
-  faGamepad,
-  faHeadphones,
-  faMobileScreen,
-} from "@fortawesome/free-solid-svg-icons";
+import { CiMobile4, CiCamera, CiHeadphones } from "react-icons/ci";
+import { HiOutlineComputerDesktop } from "react-icons/hi2";
+import { TbDeviceWatchStats, TbDeviceGamepad } from "react-icons/tb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const iconsData = [
   {
-    icon: faMobileScreen,
+    icon: <CiMobile4 />,
     text: "phones",
   },
   {
-    icon: faMobileScreen,
+    icon: <HiOutlineComputerDesktop />,
     text: "phones",
   },
   {
-    icon: faMobileScreen,
+    icon: <TbDeviceWatchStats />,
     text: "phones",
   },
   {
-    icon: faMobileScreen,
+    icon: <CiCamera />,
     text: "phones",
   },
   {
-    icon: faMobileScreen,
+    icon: <CiHeadphones />,
     text: "phones",
   },
   {
-    icon: faMobileScreen,
+    icon: <TbDeviceGamepad />,
     text: "phones",
   },
 ];
@@ -59,7 +54,7 @@ function Icons({ icon, text }) {
   return (
     <div className="group m-auto flex h-40 w-40 cursor-pointer flex-col items-center justify-center rounded-md border-2 transition-all hover:bg-red-500 ">
       <div className="text-5xl text-[#504f4f] duration-500 group-hover:text-white">
-        <FontAwesomeIcon icon={icon} />
+        {icon}
       </div>
       <div className="capitalize group-hover:text-white ">{text}</div>
     </div>
